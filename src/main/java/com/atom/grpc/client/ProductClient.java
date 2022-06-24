@@ -53,7 +53,7 @@ public class ProductClient {
     public static void main(String[] args) {
         ProductClient client = new ProductClient(host, serverPort);
         String addResult = client.addProduct();
-        logger.info("add product result :{} " + addResult);
+        logger.info("add product result :{} " , addResult);
     }
 
 
@@ -67,7 +67,7 @@ public class ProductClient {
             ProductId productId = blockingStub.addProduct(productRequest);
             return productId.getValue();
         } catch (Exception e) {
-            logger.error("add product  failed : " + e.getMessage(), e);
+            logger.error("add product  failed : " , e);
             return null;
         } finally {
             // 关闭channel, 释放资源.

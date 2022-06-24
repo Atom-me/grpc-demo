@@ -53,7 +53,7 @@ public class ProductClient2 {
     public static void main(String[] args) throws Exception {
         ProductClient2 client = new ProductClient2(host, serverPort);
         ProductResponse productResponse = client.getProduct();
-        logger.info("get product result :{} " + productResponse);
+        logger.info("get product result :{} ", productResponse);
     }
 
 
@@ -65,7 +65,7 @@ public class ProductClient2 {
             ProductResponse productResponse = blockingStub.getProduct(productIdRequest);
             return productResponse;
         } catch (Exception e) {
-            logger.error("get product  failed : " + e.getMessage(), e);
+            logger.error("get product  failed : ", e);
             return null;
         } finally {
             // 关闭channel, 释放资源.
